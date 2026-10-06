@@ -22,7 +22,7 @@ const barColor =
 
 
   return (
-    <div className="bg-linear-to-br from-green-950 to-green-900 border border-green-800 rounded-2xl p-6 mb-5">
+    <div className="bg-gradient-to-br from-green-950 to-green-900 border border-green-800 rounded-2xl p-6 mb-5">
       <p className="text-sm text-green-300 mb-1 tracking-widest uppercase">
         screen time today
       </p>
