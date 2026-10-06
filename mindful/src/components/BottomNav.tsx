@@ -7,19 +7,25 @@ const BottomNav = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
   useEffect(() => {
+    // Check current session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setIsAuthenticated(!!session)
     })
+
+    // Listen for auth state changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsAuthenticated(!!session)
+    })
+
+    return () => subscription.unsubscribe()
   }, [])
 
   const isToday   = pathname === '/today'
   const isGoals   = pathname === '/goals'
   const isReflect = pathname === '/reflect'
 
-  // Hide on auth pages
-  const isAuthPage = pathname === '/login' || pathname === '/register'
+  const isAuthPage = pathname === '/login' || pathname === '/register' || pathname === '/'
   if (isAuthPage) return null
-
   if (!isAuthenticated) return null
 
   return (
