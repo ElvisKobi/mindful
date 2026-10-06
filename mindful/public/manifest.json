@@ -1,0 +1,17 @@
+{
+  "name": "Mindful — Reclaim Your Attention",
+  "short_name": "Mindful",
+  "description": "Break free from doom-scrolling",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1a0e",
+  "theme_color": "#0e1a0e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
